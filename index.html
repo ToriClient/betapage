@@ -1,60 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tori Client</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <title>Video Background</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+        #background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            pointer-events: none; /* Makes the video non-interactive */
+        }
+    </style>
 </head>
-
 <body>
-    <div class="wrapper">
-        <nav class="navbar">
-            <div class="navbar__container">
-                <div class="navbar__branding">
-                    <a href="index.html">
-                        <img src="assets/logo.png" alt="Tori Client Logo" class="logo">
-                        <span>Tori Client</span>
-                    </a>
-                </div>
-                <div class="navbar__items">
-                    <a href="#features" class="navbar__item">Features</a>
-                    <a href="#about" class="navbar__item">About</a>
-                    <a href="#download" class="navbar__item">Download</a>
-                </div>
-            </div>
-        </nav>
+    <!-- YouTube Iframe for the video background -->
+    <div id="player"></div>
 
-        <main class="main">
-            <section class="section section--hero">
-                <h1 class="hero-heading">Tori Client</h1>
-                <p class="hero-subheading">Experience Minecraft like never before</p>
-                <a href="#download" class="button button--primary">Download Now</a>
-            </section>
-            
-            <section class="section" id="about">
-                <h2>About Tori Client</h2>
-                <p>The Tori Client is a versatile, feature-packed Minecraft client...</p>
-            </section>
+    <!-- YouTube API Script -->
+    <script>
+        // Load the YouTube API
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-            <section class="section" id="features">
-                <h2>Features</h2>
-                <p>Customizable HUD, optimized performance, and more...</p>
-            </section>
-
-            <section class="section" id="download">
-                <h2>Download</h2>
-                <p>Get the Tori Client for your platform...</p>
-            </section>
-        </main>
-
-        <footer class="footer">
-            <p>© Tori Client. All Rights Reserved.</p>
-        </footer>
-    </div>
+        // Initialize the YouTube player
+        function onYouTubeIframeAPIReady() {
+            new YT.Player('player', {
+                videoId: 'ANkxRGvl1VY', // YouTube video ID
+                playerVars: {
+                    autoplay: 1,
+                    loop: 1,
+                    playlist: 'ANkxRGvl1VY', // Needed for looping
+                    controls: 0,
+                    showinfo: 0,
+                    modestbranding: 1,
+                    fs: 0,
+                    cc_load_policy: 0,
+                    iv_load_policy: 3,
+                    autohide: 1,
+                    mute: 1
+                },
+                events: {
+                    onReady: function (event) {
+                        event.target.mute(); // Ensures the video is muted
+                        event.target.playVideo();
+                    }
+                }
+            });
+        }
+    </script>
 </body>
-
 </html>
