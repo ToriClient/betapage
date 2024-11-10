@@ -24,10 +24,14 @@ body {
     color: white;
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
+.logo-icon {
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+    border-radius: 50%; /* Makes it circular */
+    object-fit: cover; /* Ensures the image fits well inside the circle */
+    margin-right: 10px; /* Adds spacing if needed */
 }
+
 
 .nav-links {
     display: flex;
