@@ -15,13 +15,25 @@ body {
 }
 
 .top-bar {
+    width: 50%; /* Adjust the width to be more centered */
+    height: 90px; /* Adjust the height */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.4); /* Slight transparency */
-    padding: 20px 50px;
-    color: white;
+    padding: 0 20px; /* Adequate padding for content inside the navbar */
+    position: fixed;
+    top: 30px; /* Add some space from the top */
+    left: 50%;
+    transform: translateX(-50%); /* Center the navbar horizontally */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px); /* Glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Support for Safari */
+    border-radius: 20px; /* Rounded edges */
+    border: 1px solid rgba(255, 255, 255, 0.18); /* Light border */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Shadow for a glassy look */
+    color: white
 }
+
 
 .logo-icon {
     width: 40px; /* Adjust size as needed */
