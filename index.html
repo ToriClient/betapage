@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top Bar</title>
+    <title>Download Counter</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body style="background-image: url('assets/background.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center; color: white;">
+
     <div class="top-bar">
         <div class="logo">TORI CLIENT</div>
         <nav class="nav-links">
@@ -14,17 +15,18 @@
             <a href="#">Changelog</a>
             <a href="#">Features</a>
             <a href="#">Support</a>
-            <a href="#">Jobs</a>
-            <a href="#">Socials</a>
             <a href="#">Store</a>
         </nav>
         <div class="right-section">
             <span class="online-status">296,000 online</span>
             <span class="cart-icon">🛒</span>
             <span class="moon-icon">🌙</span>
-            <button class="download-btn">Download</button>
+            <button class="download-btn" onclick="incrementDownloadCount()">Download</button>
             <button class="menu-btn">☰ Menu</button>
+            <span class="download-times" id="downloadCount">0 downloads</span>
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
