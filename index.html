@@ -1,32 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futuristic Minecraft Client</title>
+    <title>Tori Client</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
+
 <body>
-    <header>
-        <div class="logo">
-            <img src="assets/logo.png" alt="Minecraft Client Logo">
-        </div>
-        <nav>
-            <a href="#features">Features</a>
-            <a href="#download">Download</a>
-            <a href="#support">Support</a>
-            <a href="#contact">Contact</a>
+    <div class="wrapper">
+        <nav class="navbar">
+            <div class="navbar__container">
+                <div class="navbar__branding">
+                    <a href="index.html">
+                        <img src="assets/logo.png" alt="Tori Client Logo" class="logo">
+                        <span>Tori Client</span>
+                    </a>
+                </div>
+                <div class="navbar__items">
+                    <a href="#features" class="navbar__item">Features</a>
+                    <a href="#about" class="navbar__item">About</a>
+                    <a href="#download" class="navbar__item">Download</a>
+                </div>
+            </div>
         </nav>
-    </header>
 
-    <main>
-        <section id="hero" class="scroll-section">Welcome to <span>Minecraft Client</span></section>
-        <section id="features" class="scroll-section">Features</section>
-        <section id="download" class="scroll-section">Download</section>
-        <section id="support" class="scroll-section">Support</section>
-        <section id="contact" class="scroll-section">Contact</section>
-    </main>
+        <main class="main">
+            <section class="section section--hero">
+                <h1 class="hero-heading">Tori Client</h1>
+                <p class="hero-subheading">Experience Minecraft like never before</p>
+                <a href="#download" class="button button--primary">Download Now</a>
+            </section>
+            
+            <section class="section" id="about">
+                <h2>About Tori Client</h2>
+                <p>The Tori Client is a versatile, feature-packed Minecraft client...</p>
+            </section>
 
-    <script src="script.js"></script>
+            <section class="section" id="features">
+                <h2>Features</h2>
+                <p>Customizable HUD, optimized performance, and more...</p>
+            </section>
+
+            <section class="section" id="download">
+                <h2>Download</h2>
+                <p>Get the Tori Client for your platform...</p>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>© Tori Client. All Rights Reserved.</p>
+        </footer>
+    </div>
 </body>
+
 </html>
